@@ -2,12 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HAHAHAHA I hate this class</title>
+    <title>AME 470</title>
     <link rel="stylesheet" id="site-css" href="/AME-470/style.css" type="text/css" media="all">
 </head>
 <body>
-    <div class="background">
-        <h1 class="title">HEY THERE AME 470</h1>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('#accordion').find('.tab').click(function(){
+
+            //Expand or collapse this panel
+            $(this).next().slideToggle();
+
+            //Hide the other panels
+            $(".info").not($(this).next()).slideUp();
+
+        });
+    });
+</script>
+<style>
+    .tab {
+        cursor: pointer;
+    }
+    .info {
+        display: none;
+    }
+    .info.default {
+        display: block;
+    }
+    .resHeader, #accordion {
+        text-align: center;
+    }
+    #resList {
+        margin-left: 0px;
+        padding: 0;
+    }
+    #resList li {
+        list-style: none;
+
+    }
+    .info h2, .info h3 {
+        color: #ff4200;
+    }
+    body {
+        background-color: #cccccc;
+    }
+    #accordion {
+        background-color: #ffffff;
+    }
+</style>
+<h1 class="resHeader">Resume</h1>
+<div id="accordion">
+    <h3 class="tab">Objective</h3>
+    <div class="info default">
+        <p>To become an experienced full LAMP Stack web developer.<br/>To become a key member of the nonprofit community.</p>
     </div>
+    <h3 class="tab">Education</h3>
+    <div class="info">
+        <h2>Completed:</h2>
+        <p>Highschool Degree from Hamilton High School, Chandler, AZ</p>
+        <h2>In Progress:</h2>
+        <p>Undergraduate Degree in Digital Culture, focus in Media Processing, at ASU, Arizona.</p>
+    </div>
+    <h3 class="tab">Skills</h3>
+    <div class="info">
+        <ul id="resList">
+            <li>CSS</li>
+            <li>HTML</li>
+            <li>Javascript</li>
+            <li>PHP</li>
+            <li>MYSQL</li>
+            <li>CMS Security</li>
+            <li>Nonprofit Work</li>
+            <li>Branding</li>
+            <li>UI/UX Design</li>
+        </ul>
+    </div>
+    <h3 class="tab">Awards</h3>
+    <div class="info">
+        <ul id="resList">
+            <li>4th Place at Startup Weekend Phoenix 2016</li>
+            <li>Best Branding 24-Hour Nonprofit Workshop</li>
+        </ul>
+    </div>
+    <h3 class="tab">Contact</h3>
+    <div class="info">
+        <h2>Contact Info</h2>
+        <p><a href="tel:+14804405707">Phone Number: 480-440-5707</a></p>
+        <p><a href="mailto:Garrett@akosweb.com">Email: Garrett@akosweb.com</a></p>
+    </div>
+</div>
 </body>
 </html>
