@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <script src='asyncReq.js'> </script>
+
+  <script>
+    function calc(){
+        var str = document.getElementById("equation").value;
+        var newString = str.replace(' ', '');
+        var equation =  newString.split(/([*+\-])/g);
+        console.log(equation);
+        var op = equation[1];
+        var a = equation[0];
+        var b = equation[2];
+        if(op == '+') {
+            op = op.replace('+', '%2b');
+        }
+        else if (op == '-') {
+            op = op.replace('-', '%2d');
+        }
+        else if (op == '*' ) {
+            op = op.replace('*', '%2a');
+        }
+        else if(op == '/') {
+            op = op.replace('/', '%2f');
+        }
+      var url = "./math?op=" + op + "&a=" + a + "&b=" + b;
+      console.log(url);
+      loadFile(url ,function(d){alert(d)})
+    }
+  </script>
+</head>
+
+<body>
+<h2>Please Enter a Simple Math Equation</h2>
+  <input type='text' id='equation'>
+
+  <button onclick='calc()'> Calculate </button>
+</body>
+
+</html>
